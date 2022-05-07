@@ -1,0 +1,106 @@
+@import "mixins";
+@import "dimensions";
+
+.wallpaper-pane {
+  @include panel;
+  position: relative;
+  width: $wallpapers-image-width;
+  max-width: 75vw;
+}
+
+@media only screen and (min-width: 600px) {
+  .wallpaper-pane {
+    max-width: none;
+  }
+}
+
+.wallpaper-display {
+  width: 100%;
+}
+
+.button {
+  height: $wallpapers-button-size;
+  width: $wallpapers-button-size;
+
+  position: absolute;
+  bottom: calc(#{$margin} * 1.3);
+
+  z-index: 20;
+
+  cursor: pointer;
+
+  @include tint-shadow;
+
+  &-download {
+    right: calc(#{$margin} * 1 - 6px);
+  }
+
+  &-toggle {
+    left: calc(#{$margin} * 0.5);
+  }
+
+  & > img {
+    width: 100%;
+  }
+
+  .description {
+    font-size: $description-font-size;
+    font-style: italic;
+    margin-top: -0.6rem;
+    &-toggle {
+      margin-left: 0.5rem;
+    }
+    // &-download {
+    // }
+  }
+}
+
+.title {
+  position: absolute;
+  width: $wallpapers-image-width;
+  max-width: 50%;
+  bottom: calc(#{$margin} * 1.5);
+  left: 25%;
+  right: 25%;
+
+  z-index: 30;
+
+  text-align: center;
+  overflow-wrap: break-word;
+
+  @include tint-shadow;
+
+  &-name {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: $wallpapers-image-width;
+    max-width: 100%;
+
+    font-weight: bold;
+  }
+}
+
+.glass-filler {
+  position: absolute;
+  bottom: $margin;
+  left: 0;
+
+  z-index: 10;
+
+  width: 100%;
+  height: 3.5rem;
+
+  @include glass;
+  border-top: 1px solid $color-glass-edge;
+}
+
+.wallpaper-display-frame {
+  opacity: 1;
+}
+
+.hidden {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}

@@ -1,0 +1,9 @@
+<div>
+  <app-wallpaper-tag-filters></app-wallpaper-tag-filters>
+  <div class="wallpapers">
+    <app-wallpaper-item
+      *ngFor="let wallpaper of wallpapers"
+      [wallpaper]="wallpaper"
+    ></app-wallpaper-item>
+  </div>
+</div>

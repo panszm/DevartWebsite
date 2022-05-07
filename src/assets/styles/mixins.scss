@@ -1,0 +1,35 @@
+@import "colors";
+@import "dimensions";
+
+@mixin shadow {
+  box-shadow: 0 0 0.3rem 0.3rem $color-primary;
+}
+
+@mixin shadow-underline {
+  box-shadow: 0 4px 0 0 $color-text;
+}
+
+@mixin tint-shadow {
+  filter: drop-shadow(3px 3px 2px $color-fill);
+}
+
+@mixin glass {
+  background: rgba($color-fill, 0.3);
+  backdrop-filter: blur(2px);
+}
+
+@mixin panel {
+  background: $color-fill;
+  border-radius: $border-radius;
+  padding: $margin;
+  margin: $margin;
+}
+
+@mixin hovered {
+  opacity: 0.75;
+}
+
+@mixin disabled {
+  opacity: 0.5;
+  cursor: default;
+}

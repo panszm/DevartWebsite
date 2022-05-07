@@ -1,0 +1,49 @@
+@import "dimensions";
+@import "colors";
+@import "mixins";
+
+.navbar {
+  @include glass;
+  @include tint-shadow;
+
+  padding: $margin;
+  font-size: $header-font-size;
+
+  border-bottom: 1px solid $color-glass-edge;
+
+  &-item {
+    margin: calc(#{$margin} * 0.5);
+  }
+
+  &-item:hover {
+    @include hovered;
+  }
+  &-links {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+}
+
+.socials {
+  height: calc(2 * #{$header-font-size});
+  position: fixed;
+  top: $margin;
+  right: calc(#{$margin} * 3);
+  display: flex;
+  align-items: center;
+  .link {
+    height: calc(1.5 * #{$header-font-size});
+  }
+}

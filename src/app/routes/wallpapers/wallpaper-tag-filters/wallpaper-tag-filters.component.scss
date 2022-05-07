@@ -1,0 +1,42 @@
+@import "mixins";
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  &-item {
+    @include panel;
+    @include glass;
+    width: fit-content;
+    padding: $internal-margin;
+
+    &-name {
+      font-weight: bold;
+    }
+
+    &:hover:not(.disabled) {
+      @include hovered;
+    }
+
+    &.selected {
+      @include shadow-underline;
+    }
+  }
+
+  &-item:not(.disabled) {
+    cursor: pointer;
+  }
+
+  .icon {
+    display: flex;
+
+    margin-left: $margin;
+    height: 2rem;
+
+    &-button-clear {
+      cursor: pointer;
+    }
+  }
+}

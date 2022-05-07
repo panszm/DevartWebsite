@@ -1,0 +1,19 @@
+<div class="tags">
+  <div
+    *ngFor="let tag of tags | keyvalue"
+    class="tags-item"
+    [ngClass]="{ selected: isTagSelected(tag.key), disabled: !tag.value }"
+    (click)="toggleTagSelection(tag.key)"
+  >
+    <span class="tags-item-name">#{{ tag.key }}</span> ({{ tag.value }})
+  </div>
+
+  <div
+    *ngIf="tags && tags.size"
+    [class.disabled]="!isAnyTagSelected"
+    class="icon icon-button-clear"
+    (click)="deselectAll()"
+  >
+    <img src="../../../../assets/images/buttons/clear.svg" />
+  </div>
+</div>

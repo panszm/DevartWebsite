@@ -1,0 +1,50 @@
+@import "colors";
+@import "consts";
+
+.particle-container {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    $color-primary,
+    $color-fill,
+    $color-primary
+  );
+  z-index: -1;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 5px $color-fill;
+}
+
+@for $i from 1 through $PARTICLE_BACKGROUND_PARTICLE_COUNT {
+  @keyframes particle-animation-#{$i} {
+    100% {
+      transform: translate3d(
+        (random(90) * 1vw),
+        (random(90) * 1vh),
+        (random(100) * 1px)
+      );
+    }
+  }
+
+  .particle:nth-child(#{$i}) {
+    animation: particle-animation-#{$i} 60s infinite;
+    $size: random(5) + 3 + px;
+    opacity: calc(random(100) / 100);
+    height: $size;
+    width: $size;
+    animation-delay: -$i * 0.2s;
+    transform: translate3d(
+      (random(90) * 1vw),
+      (random(90) * 1vh),
+      (random(100) * 1px)
+    );
+    background: $color-fill;
+  }
+}

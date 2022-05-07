@@ -1,0 +1,41 @@
+<div *ngIf="wallpaper" class="wallpaper-pane">
+  <a (click)="download()">
+    <div class="button button-download">
+      <img src="../../../../assets/images/buttons/download.svg" />
+      <div class="description description-download">Download</div>
+    </div>
+  </a>
+
+  <div class="glass-filler"></div>
+  <div class="title">
+    <div class="title-name">{{ wallpaper.name }}</div>
+    ({{ isShowingLockScreen ? lockScreenLabel : homeScreenLabel }})
+  </div>
+
+  <div class="wallpaper-display-frame" [class.hidden]="!isShowingLockScreen">
+    <img class="wallpaper-display" [src]="wallpaper.lockscreenSrc" />
+    <div class="button button-toggle">
+      <img
+        *ngIf="isShowingLockScreen"
+        (click)="toggleShowingLockScreen()"
+        src="../../../../assets/images/buttons/toggle_off.svg"
+      />
+      <div class="description description-toggle" *ngIf="isShowingLockScreen">
+        Toggle
+      </div>
+    </div>
+  </div>
+  <div class="wallpaper-display-frame" [class.hidden]="isShowingLockScreen">
+    <img class="wallpaper-display" [src]="wallpaper.homescreenSrc" />
+    <div class="button button-toggle">
+      <img
+        *ngIf="!isShowingLockScreen"
+        (click)="toggleShowingLockScreen()"
+        src="../../../../assets/images/buttons/toggle_on.svg"
+      />
+      <div class="description description-toggle" *ngIf="!isShowingLockScreen">
+        Toggle
+      </div>
+    </div>
+  </div>
+</div>

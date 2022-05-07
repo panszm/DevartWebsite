@@ -1,0 +1,16 @@
+@import "colors";
+@import "dimensions";
+
+a {
+  text-decoration: none;
+}
+
+.navbar-item {
+  display: flex;
+  align-items: center;
+
+  &-icon {
+    height: 100%;
+    margin-right: $internal-margin;
+  }
+}

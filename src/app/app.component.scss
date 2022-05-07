@@ -1,0 +1,7 @@
+@import "dimensions";
+
+@media only screen and (min-width: 600px) {
+  .app-content {
+    margin: $margin calc(#{$margin} * 5);
+  }
+}
