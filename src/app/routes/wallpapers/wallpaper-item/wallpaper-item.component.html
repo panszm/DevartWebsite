@@ -2,7 +2,7 @@
   <a (click)="download()">
     <div class="button button-download">
       <img src="../../../../assets/images/buttons/download.svg" />
-      <div class="description description-download">Download</div>
+      <div class="description description-download">{{ downloadLabel }}</div>
     </div>
   </a>
 
@@ -21,7 +21,7 @@
         src="../../../../assets/images/buttons/toggle_off.svg"
       />
       <div class="description description-toggle" *ngIf="isShowingLockScreen">
-        Toggle
+        {{ toggleLabel }}
       </div>
     </div>
   </div>
@@ -34,7 +34,7 @@
         src="../../../../assets/images/buttons/toggle_on.svg"
       />
       <div class="description description-toggle" *ngIf="!isShowingLockScreen">
-        Toggle
+        {{ toggleLabel }}
       </div>
     </div>
   </div>

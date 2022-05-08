@@ -15,5 +15,7 @@ export class EnglishDictionary implements Dictionary {
   wallpapers: IWallpapers = {
     lockscreen: 'lockScreen',
     homescreen: 'homeScreen',
+    toggle: 'Toggle',
+    download: 'Download',
   };
 }

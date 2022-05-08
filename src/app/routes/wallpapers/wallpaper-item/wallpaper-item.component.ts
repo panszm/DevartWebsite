@@ -31,6 +31,14 @@ export class WallpaperItemComponent implements OnInit {
     return this.translationService.currentDictionary.wallpapers.homescreen;
   }
 
+  get toggleLabel(): string {
+    return this.translationService.currentDictionary.wallpapers.toggle;
+  }
+
+  get downloadLabel(): string {
+    return this.translationService.currentDictionary.wallpapers.download;
+  }
+
   constructor(
     private translationService: TranslationService,
     private wallpaperService: WallpapersService
